@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Dogs</h1>
+<h1>Where My Dogz At?</h1>
 
-<table>
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>ID</th>
@@ -24,9 +24,9 @@
         <td><%= dog.age %></td>
         <td><%= dog.owner.try(:name) %></td>
         <td><%= dog.updated_at.stamp('4/12/2015') %></td>
-        <td><%= link_to 'Show', dog %></td>
-        <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
-        <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to fa_icon('eye', text: 'Show'), dog %></td>
+        <td><%= link_to fa_icon('pencil', text: 'Edit'), edit_dog_path(dog) %></td>
+        <td><%= link_to fa_icon('trash-o', text: 'Destroy'), dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Dog', new_dog_path %>
+<%= link_to 'New Dog', new_dog_path, class: "btn btn-primary btn-sm" %>
