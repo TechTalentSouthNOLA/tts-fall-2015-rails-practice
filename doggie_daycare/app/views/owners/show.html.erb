@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @owner.name %>
@@ -9,6 +7,12 @@
   <strong>Phone:</strong>
   <%= @owner.phone %>
 </p>
+
+<ul>
+<% @owner.dogs.each do |dog| %>
+  <li><%= dog.name %></li>
+<% end %>
+</ul>
 
 <%= link_to 'Edit', edit_owner_path(@owner) %> |
 <%= link_to 'Back', owners_path %>

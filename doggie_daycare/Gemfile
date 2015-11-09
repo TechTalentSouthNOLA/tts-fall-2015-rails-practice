@@ -37,6 +37,7 @@ gem 'quiet_assets'
 gem 'stamp'
 gem "font-awesome-rails"
 gem 'starter_generators'
+gem 'awesome_print'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
