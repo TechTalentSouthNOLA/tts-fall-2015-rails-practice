@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @song.title %>
@@ -8,6 +6,11 @@
 <p>
   <strong>Artist:</strong>
   <%= @song.artist.try(:name) %>
+</p>
+
+<p>
+  <strong>Year Released:</strong>
+  <%= @song.year %>
 </p>
 
 <%= link_to 'Edit', edit_song_path(@song) %> |

@@ -15,6 +15,8 @@ end
 #  artist_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  year       :integer
+#  rating     :integer
 #
 # Indexes
 #
