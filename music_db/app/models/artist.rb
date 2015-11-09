@@ -1,6 +1,9 @@
 class Artist < ActiveRecord::Base
   belongs_to :genre
   has_many :songs
+
+  validates :name, uniqueness: true, length: {minimum: 2}
+  validates :genre_id, :name, presence: true
 end
 
 # == Schema Information

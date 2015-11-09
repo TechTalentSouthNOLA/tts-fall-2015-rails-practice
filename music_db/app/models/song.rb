@@ -1,6 +1,23 @@
 class Song < ActiveRecord::Base
   belongs_to :artist
+
+  validates :title, :artist_id, :year, presence: true
+  validates :title, length: {minimum: 2}
 end
+
+# # Acceptance
+# class Person <ActiveRecord::Base
+#   validates :terms_of_service, acceptance: true
+# end
+
+# # Conditionals
+# class Order < ActiveRecord::Base
+#   validates :card_number, presence: true, if: :paid_with_card?
+
+#   def paid_with_card?
+#     payment_type == "card"
+#   end
+# end
 
 # == Schema Information
 #
@@ -11,6 +28,8 @@ end
 #  artist_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  year       :integer
+#  rating     :integer
 #
 # Indexes
 #
