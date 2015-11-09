@@ -1,14 +1,10 @@
-<p id="notice"><%= notice %></p>
+<h3>Songs by <%= @artist.name %> <small><%= @artist.genre.try(:genre).try(:titleize) %></small></h3>
 
-<p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
-</p>
-
-<p>
-  <strong>Genre:</strong>
-  <%= @artist.genre.try(:genre) %>
-</p>
+<ul>
+  <% @artist.songs.order('title').each do |song| %>
+    <li><%= song.title %></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
