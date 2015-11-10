@@ -3,7 +3,14 @@ class Song < ActiveRecord::Base
 
   validates :title, :artist_id, :year, presence: true
   validates :title, length: {minimum: 2}
+
+  validates_uniqueness_of :title, :scope => :artist_id
 end
+
+# Scope example
+# class Article < ActiveRecord::Base
+#   scope :published, -> { where(published: true) }
+# end
 
 # # Acceptance
 # class Person <ActiveRecord::Base

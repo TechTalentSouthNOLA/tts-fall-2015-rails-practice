@@ -4,6 +4,12 @@ class Artist < ActiveRecord::Base
 
   validates :name, uniqueness: true, length: {minimum: 2}
   validates :genre_id, :name, presence: true
+
+  # Now you can call Artist.recent or Artist.recent(30)
+  scope :recent, -> (minutes_past = 60) { where("created_at > ?", minutes_past.minutes.ago) }
+
+  # Now you can call Artist.today
+  scope :today, -> { where('DATE(created_at) = ?', Date.today) }
 end
 
 # == Schema Information
